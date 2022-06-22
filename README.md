@@ -33,3 +33,13 @@ A nodejs application that gets your public IP and updates an Azure DNS zone to p
 | RESOURCE_GROUP_NAME | Resource group where the DNS zone is located |
 | DNS_ZONE | Azure DNS zone name |
 | RECORD | @ or subdomain |
+
+## Local Example
+---
+
+```bash
+WillsMBP.local: ~/Documents/Projects/azure-ddns
+🥞 >TENANT_ID='820ff242-a754-4e7a-9be9-de7b5350251f' CLIENT_ID='27b5946c-6e11-4e62-b081-0d11138cccd8' CLIENT_SECRET='n1S8Q~bFKlqO13EEPxl0TK7NEUZjQFLgeLy39csu' SUBSCRIPTION_ID='8d8aeb08-5ca6-4f8c-a3ef-e9ab11cc4449' RESOURCE_GROUP_NAME='rg-dns-example' DNS_ZONE='wdew.uk' RECORD='home' node index.js
+
+Updated - Domain: home.wdew.uk IP: 1.22.25.29
+```
