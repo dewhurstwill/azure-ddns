@@ -6,6 +6,9 @@
     "type": "git",
     "url": "https://github.com/dewhurstwill/azure-ddns.git"
   },
+  "scripts": {
+    "start": "node index.js"
+  },
   "license": "MIT",
   "dependencies": {
     "axios": "^0.27.2",

@@ -3,6 +3,7 @@ const {
   getPublicIp,
   getToken,
   listDnsZone,
+  listARecords,
   createUpdateRecord,
 } = require('./helpers');
 
@@ -26,6 +27,21 @@ async function main() {
   }
 
   const publicIp = await getPublicIp();
+  const records = await listARecords(
+    token,
+    config.subscriptionId,
+    config.resourceGroupName,
+    config.dnsZone
+  )
+
+  const [ record ] = records.value.filter(({ name }) => name === config.record);
+
+  if (record && record.properties.ARecords.some(record => record.ipv4Address === publicIp)) {
+    console.log(`No Change - Domain: ${config.record === '@' ? config.dnsZone : 
+  `${config.record}.${config.dnsZone}`} IP: ${publicIp}`);
+    process.exit(0);
+  }
+
   const zone = await createUpdateRecord(
     token,
     config.subscriptionId,
