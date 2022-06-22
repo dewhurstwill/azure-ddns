@@ -34,6 +34,8 @@ A nodejs application that gets your public IP and updates an Azure DNS zone to p
 | DNS_ZONE | Azure DNS zone name |
 | RECORD | @ or subdomain |
 
+<br/>
+
 ## Local Example
 ---
 
@@ -43,3 +45,5 @@ WillsMBP.local: ~/Documents/Projects/azure-ddns
 
 Updated - Domain: home.wdew.uk IP: 1.22.25.29
 ```
+
+> Values are for example and should be updated
