@@ -1,7 +1,8 @@
 {
   "name": "azure-ddns",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "main": "index.js",
+  "keywords": ["nodejs", "javascript", "dns", "azure", "ddns", "ddns-client", "azure-dns", "azure-dns-zone"],
   "repository": {
     "type": "git",
     "url": "https://github.com/dewhurstwill/azure-ddns.git"
