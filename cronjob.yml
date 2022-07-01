@@ -1,0 +1,21 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: azure-dynamic-dns
+  namespace: network
+spec:
+  schedule: "0 2 * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: azure-ddns
+            image: your_registry/homelab/azure-ddns:latest
+            imagePullPolicy: IfNotPresent
+            envFrom:
+            - configMapRef:
+                name: dns-config
+            - secretRef:
+                name: dns-secret
+          restartPolicy: OnFailure
